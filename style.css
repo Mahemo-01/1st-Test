@@ -1,17 +1,15 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Monserrat';
 }
 
 :root {
   --light-color:    #f0f3f5;
   --grey-color:     #c2c2c2;
   --card-color:     #ffffff;
-  --black-color:    #333333;
+  --black-color:    #202124;
   --main-color:     #a08cfa;
   --red-color:      #ff6c84;
-  --blue-color:     #6ac7ed;
 }
 
 body{
@@ -20,6 +18,11 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  line-height: 1rem;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: .875rem;
+  color: var(--black-color);
 }
 
 .card{
@@ -28,27 +31,19 @@ body{
   width: 80%;
   padding: 3rem 1rem;
   border-radius: 14px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* border: 4px solid orange; */
 }
 
-.image-upload{
-  font-size: 10rem;
-  color: var(--main-color);
+.title{
+  letter-spacing: 4px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
 }
-
-.image-upload > input{
-  display: none;
-}
-
-.image-upload img{
-  width: 111px;
-  cursor: pointer;
-}
-
 
 form{
   width: 70%;
@@ -57,12 +52,13 @@ form{
 .form-group{
   position: relative;
   margin: 25px 0;
+  display: grid;
+  grid-template-columns: 5% auto;
+  column-gap: 1rem;
 }
 
 .grid{
- display: grid;
- grid-template-columns: auto 50%;
- column-gap: 1rem;
+ grid-template-columns: 5% auto 45%;
 }
 
 .input-form ,select{
@@ -78,7 +74,7 @@ form span{
   position: absolute;
   width: 100%;
   bottom: 25%;
-  left: 0%;
+  left: calc(5% + 1rem);
   font-size: 16px;
   color: var(--grey-color);
   pointer-events: none;
@@ -86,35 +82,64 @@ form span{
 }
 
 form i {
-  color: var(--red-color);
+  color: var(--main-color);
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  font-size: 1.2rem;
 }
 
 input:focus + span, input:valid + span{
-  transform: translateY(-100%);
+  transform: translateY(-130%);
+  color: var(--main-color);
+  font-size: .7rem;
+}
+
+input:valid + span{
+  color: var(--grey-color);
+}
+
+input:focus + span{
   color: var(--main-color);
 }
 
-input:focus, input:valid, select:focus, select:valid{
+input:valid, select:valid{
+  border-bottom: 2px solid var(--grey-color);
+  color: var(--black-color);
+}
+
+input:focus, select:focus{
   border-bottom: 2px solid var(--main-color);
   outline: none;
   color: var(--black-color);
 }
 
 select{
+  /* -webkit-appearance: none; */
+  position: relative;
   border: none;
   border-bottom: 2px solid var(--grey-color);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+select::before {
+  content: 'v';
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  color: red;
 }
 
 .container{
   width: 70%;
   display: grid;
-  grid-template-columns: auto 50%;
+  grid-template-columns: 1fr 1fr;
   column-gap: 1rem;
 }
 
 .btn{
   border-radius: 6px;
-  width: auto;
   padding: 10px 15px;
   display: flex ;
   justify-content: center;
@@ -131,5 +156,70 @@ select{
 }
 
 .btn:nth-child(2):hover{
-  background-color: var(--blue-color);
+  background-color: var(--main-color);
+}
+
+@media (min-width: 800px) {  
+  body{
+    height: 100vh;
+  }
+
+  .card{
+    height: 450px;
+    width: 70%;
+  }
+
+  .title{
+    letter-spacing: 5px;
+    font-size: 1.4rem;
+  }
+
+  form{
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .form-group{
+    margin: 15px 0;
+    grid-template-columns: 7% auto;
+    column-gap: 1.5rem;
+  }
+
+  .grid{
+    grid-template-columns: 7% auto 43%;
+  }
+
+  form span{
+    left: calc(7% + 1.5rem);
+  }
+
+  form i {
+    font-size: 1.3rem;
+  }
+
+.container{
+  margin-top: 2rem;
+  align-self: flex-end;
+  margin-right: 10%;
+  width: calc(40% - 1rem);
+  column-gap: 2rem;
+}
+
+.btn{
+  padding: 10px auto;
+}
+}
+
+@media (min-width: 1200px) {  
+  .card{
+    width: 60%;
+  }
+
+  .title{
+    letter-spacing: 6px;
+    font-size: 1.5rem;
+  }
 }

@@ -3,7 +3,7 @@ class Service {
     this.countryId = 0,
       this.countries = [],
       this.states = [],
-      this.data = ""
+      this.data = this.getData()
   }
 
   getData() {
@@ -11,7 +11,7 @@ class Service {
       paises: [
         { countryId: 1, name: "Mexico" },
         { countryId: 2, name: "Argentina" }],
-      phoneTypes: ['uno', 'dos']
+      phoneTypes: ['Principal', 'Oficina', 'Casa', 'Móvil', 'Otro']
     }
 
     //console.log(data.paises[0].name)
@@ -21,11 +21,19 @@ class Service {
   }
 
   getCountries() {
-    console.log(this.data)
+    return this.data.paises.map(country => country.name)
+  }
+
+  getPhoneTypes() {
+    return this.data.phoneTypes
   }
 }
 
+console.clear()
 const service = new Service();
+const paisesarray = service.getCountries()
+const phoneTy = service.getPhoneTypes()
+console.log(paisesarray)
+console.log(phoneTy)
 
-console.log(service.getData());
-console.log(service.data.paises[1].countryId);
+
