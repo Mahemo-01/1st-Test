@@ -7,7 +7,7 @@ console.log(paises)
 
 let phones = ["Celular", "Particular", "Laboral", "Principal"]
 let countries = [
-  { name: "México", estado: ["Edo de Méx", "Veracruz"] },
+  { name: "🇲🇽 México", estado: ["Edo de Méx", "Veracruz"] },
   { name: "Argentina", estado: ["Cordoba"] },
   { name: "Ecuador", estado: ["Quito"] },
   { name: "Colombia", estado: ["Medellin"] }

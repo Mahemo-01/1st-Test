@@ -12,67 +12,108 @@
 </head>
 
 <body>
-  <!-- card -->
-  <div class="card" id="card-form">
-    <div class="title">
-      <span>Editar Contacto</span>
-    </div>
-    <!-- form -->
-    <form>
+  <!-- Box -->
+  <div class="box">
 
+    <!-- Section contacts -->
+    <div class="section-1">
+      <div class="title">
+        <span>Mis Contactos</span>
+      </div>
+      <!-- filter -->
       <div class="form-group">
-        <i class="fas fa-user-circle"></i>
-        <input class="input-form" type="text" required>
-        <span>Nombre</span>
+        <input type="text" id="filter" placeholder="Buscar contacto">
+        <span><i class="fas fa-search"></i></span>
       </div>
-
-      <div class="form-group">
-        <i class="fas fa-language"></i>
-        <input class="input-form" type="text" required>
-        <span>Apellidos</span>
-      </div>
-      <div class="form-group">
-        <i class="fas fa-building"></i>
-        <input class="input-form" type="text" required>
-        <span>Empresa</span>
-      </div>
-      <div class="form-group">
-        <i class="fas fa-user-tie"></i>
-        <input class="input-form" type="text" required>
-        <span>Puesto</span>
-      </div>
-      <div class="form-group">
-        <i class="fas fa-envelope"></i>
-        <input class="input-form" type="text" required>
-        <span>Email</span>
-      </div>
-      <div class="form-group grid">
-        <i class="fas fa-mobile"></i>
-        <input class="input-form" type="tel" required>
-        <span>Telefono</span>
-        <select id="telefonos"></select>
-      </div>
-      <div class="form-group">
-        <i class="fas fa-map-marker-alt"></i>
-        <input class="input-form" type="tel" required>
-        <span>Direccion</span>
-      </div>
-      <div class="form-group">
-        <i class="fas fa-globe-americas"></i><select id="paises">
-        </select>
-      </div>
-      <div class="form-group grid">
-        <i class="fas fa-map-marker-alt"></i>
-        <input class="input-form" type="text" required>
-        <span>CP</span>
-        <select id="estados">
-        </select>
-      </div>
-    </form>
-    <div class="container">
-      <div class="btn" id="cancelar">Cancelar</div>
-      <div class="btn" id="guardar">Guardar</div>
+      <!-- contactos -->
+      <ul class="contacts-section">
+        <li class="contact">
+          <div>
+            <a href="#">David Ian Hernandez Montoya</a>
+            <span>daveian.hernan@gmail.com</span>
+          </div>
+        </li>
+        <li class="contact">
+          <div>
+            <a href="#">David Ian Hernandez Montoya</a>
+            <span>daveian.hernan@gmail.com</span>
+          </div>
+        </li>
+        <li class="contact">
+          <div>
+            <a href="#">David Ian Hernandez Montoya</a>
+            <span>daveian.hernan@gmail.com</span>
+          </div>
+        </li>
+      </ul>
+      <div class="add"><i class="fas fa-plus"></i></div>
     </div>
+    <!-- section 2 -->
+    <div class="section-2">
+      <!-- card -->
+      <div class="card" id="card-form">
+        <div class="title">
+          <span>Nuevo Contacto</span>
+        </div>
+        <!-- form -->
+        <form>
+          <div class="form-group">
+            <i class="fas fa-user-circle"></i>
+            <input class="input-form" type="text" required>
+            <span>Nombre</span>
+          </div>
+          <div class="form-group">
+            <i class="fas fa-language"></i>
+            <input class="input-form" type="text" required>
+            <span>Apellidos</span>
+          </div>
+          <div class="form-group">
+            <i class="fas fa-building"></i>
+            <input class="input-form" type="text" required>
+            <span>Empresa</span>
+          </div>
+          <div class="form-group">
+            <i class="fas fa-user-tie"></i>
+            <input class="input-form" type="text" required>
+            <span>Puesto</span>
+          </div>
+          <div class="form-group">
+            <i class="fas fa-envelope"></i>
+            <input class="input-form" type="text" required>
+            <span>Email</span>
+          </div>
+          <div class="form-group grid">
+            <i class="fas fa-mobile"></i>
+            <input class="input-form" type="tel" required>
+            <span>Telefono</span>
+            <select id="telefonos"></select>
+          </div>
+          <div class="form-group">
+            <i class="fas fa-map-marker-alt"></i>
+            <input class="input-form" type="tel" required>
+            <span>Direccion</span>
+          </div>
+          <div class="form-group">
+            <!-- <i class="fas fa-globe-americas"></i> -->
+            <i class="fas fa-globe-americas"></i>
+            <select id="paises">
+            </select>
+          </div>
+          <div class="form-group grid">
+            <i class="fas fa-map-marker-alt"></i>
+            <input class="input-form" type="text" required>
+            <span>CP</span>
+            <select id="estados">
+            </select>
+          </div>
+        </form>
+        <div class="container">
+          <div class="btn" id="cancelar">Cancelar</div>
+          <div class="btn" id="guardar">Guardar</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <script src="/main.js" type='module'></script>
