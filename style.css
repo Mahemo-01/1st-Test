@@ -39,10 +39,6 @@ input:focus, select:focus{
   outline: none;
 }
 
-.box{
-
-}
-
 /* Seccion 1 */
 .section-1{
   height: 100vh;
@@ -203,6 +199,7 @@ input:focus, select:focus{
   height: 30px;
   font-weight: 500; 
   font-size: 16px;
+  /* box-sizing: border-box; */
   border-bottom: 2px solid var(--grey-color);
 }
 
@@ -257,6 +254,7 @@ input:focus, select:focus{
   border-bottom: 2px solid var(--grey-color);
   font-weight: 500;
   cursor: pointer;
+  margin: 2px 0px;
 }
 
 .section-2 .container{
@@ -407,18 +405,18 @@ input:focus, select:focus{
     /* display: flex; */
   }
 
-/* 
-  .box{
+
+  /* .box{
     width: 80%;
     grid-template-columns: 1fr 2.5fr;
-  } */
+  }
 
-  /* .section-2 .card{
+  .section-2 .card{
     width: 80%;
     height: auto;
     padding: 2rem 1rem;
-    /* display: flex; */
-  } */
+    display: flex;
+  }  */
 
   .section-2 form{
     width: 80%;
@@ -432,3 +430,4 @@ input:focus, select:focus{
     letter-spacing: 6px;
     font-size: 1.5rem;
   }
+}
