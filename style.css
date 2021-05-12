@@ -132,19 +132,34 @@ input:focus, select:focus{
 }
 
 .add{
+  background-color: var(--main-color);
   border-radius: 50%;
   width: 50px;
   height: 50px;
-  background-color: var(--card-color);
+  -webkit-appearance: none;
   position: absolute;
   bottom: 2rem;
   right: 3.5rem;
   cursor: pointer;
+}
+
+.plus{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  bottom: 2rem;
+  right: 3.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
-  color: var(--main-color);
+  font-size: 32px;
+  color: var(--card-color);
+  cursor: pointer;
+}
+
+#create-contact:checked ~ .card {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Seccion 2 */
@@ -167,6 +182,9 @@ input:focus, select:focus{
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: all .3s ease;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .section-2 .title{
@@ -199,7 +217,6 @@ input:focus, select:focus{
   height: 30px;
   font-weight: 500; 
   font-size: 16px;
-  /* box-sizing: border-box; */
   border-bottom: 2px solid var(--grey-color);
 }
 
@@ -286,6 +303,9 @@ input:focus, select:focus{
 }
 
 
+
+
+
 @media (min-width: 800px) {  
   body{
     height: 100vh;
@@ -322,10 +342,17 @@ input:focus, select:focus{
   .add{
   width: 45px;
   height: 45px;
-  font-size: 26px;
   bottom: 1.5rem;
   right: 1.5rem;
   }
+
+  .plus{
+  width: 45px;
+  height: 45px;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  font-size: 28px;
+}
 
   .section-2{
     border-bottom-left-radius: 20px;
@@ -402,21 +429,7 @@ input:focus, select:focus{
     width: 60%;
     height: auto;
     padding: 2rem 1rem;
-    /* display: flex; */
   }
-
-
-  /* .box{
-    width: 80%;
-    grid-template-columns: 1fr 2.5fr;
-  }
-
-  .section-2 .card{
-    width: 80%;
-    height: auto;
-    padding: 2rem 1rem;
-    display: flex;
-  }  */
 
   .section-2 form{
     width: 80%;
@@ -430,4 +443,194 @@ input:focus, select:focus{
     letter-spacing: 6px;
     font-size: 1.5rem;
   }
+
+.section-2{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-2 .title{
+  letter-spacing: 4px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  pointer-events: none;
+  padding: 0;
+  padding-bottom: 1.7rem;
+}
+
+.section-2 .form-group{
+  position: absolute;
+  right: calc(0% + 1.5rem);
+  top: calc(0% + 1.5rem);
+  margin: 0;
+  display: flex;
+}
+
+.section-2 #filter{
+  border-radius: 50px;
+  padding: 5px 10px;
+  border: none;
+  font-weight: 500; 
+  font-size: 16px;
+  color: rgb(106,106,106);
+  width: 400px;
+  box-sizing: border-box;
+  margin-top: 0;
+}
+
+.section-2 #containerFilter input:valid + span {
+ transform: translateY(0);
+}
+
+.section-2 #containerFilter span{
+  position: absolute;
+  width: auto;
+  bottom: calc(50% - 8px);
+  right: 10px;
+  font-size: 14px;
+  color: rgb(106,106,106);
+  pointer-events: none;
+  transition: all .3s ease;
+
+}
+
+.section-2 .subtitle{
+  letter-spacing: 2.5px;
+  font-size: 1.5rem;
+  font-weight: 400;
+  pointer-events: none;
+  padding-bottom: 1.5rem;
+}
+
+.section-2 .groups-section{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1.5rem;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.section-2 .group{
+  background-color: var(--card-color);
+  border-radius: 8px;
+  height: 120px; 
+  width: 250px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  margin-right: 1rem;
+}
+
+.section-2 .group div:nth-child(1){
+  height: 50%;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: auto;
+}
+
+.section-2 .group div:nth-child(1) i{
+  font-size: 25px;
+  color: rgb(205,205,205);
+  margin-left: -5px;
+}
+
+.section-2 .group div:nth-child(1) i:nth-child(1){
+  font-size: 30px;
+  color: var(--main-color);
+  margin-left: 0;
+  z-index: 1;
+}
+
+.section-2 .group div:nth-child(2){
+  display: flex;
+  flex-direction: column;
+}
+
+.section-2 .group div:nth-child(2) a{
+  width: 200%;
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: rgb(106,106,106);
+  font-weight: bold;
+}
+
+.section-2 .group div:nth-child(2) span{
+  font-size: 12px;
+  color: rgb(205,205,205);
+  pointer-events: none;
+}
+
+.section-2 .contacts-section{
+  margin-top: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+}
+
+.letra{
+  grid-column: 1 / 5;
+  /* background-color: rgba(255, 255, 255, 0.4); */
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--main-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-2 .contact{
+  background-color: var(--card-color);
+  height: 60px;
+  border-radius: 50px;
+  border-top-right-radius: 10px; 
+  border-bottom-right-radius: 10px; 
+  margin: 0;
+  padding: 0 7px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;  
+}
+
+.section-2 .contact::before{
+  content: '';
+  display: block;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: var(--main-color);
+  margin-right: 10px;
+}
+
+.section-2 .contact div{
+  height: 80%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.section-2 .contact a{
+  width: 200%;
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: rgb(106,106,106);
+  font-weight: bold;
+}
+
+.section-2 .contact span{
+  margin-top: 1px;
+  font-size: 12px;
+  color: rgb(205,205,205);
+  pointer-events: none;
+}
 }
